@@ -24,12 +24,7 @@ const Modal = ({ open, onClose, children }: IModalProps) => {
       }}
     >
       <div className="fixed left-0 top-0 w-screen h-screen bg-neutral-800 opacity-80" />
-      <div
-        className="flex items-center justify-center w-full relative z-[1055] h-full"
-        onClick={(e) => {
-          // e.
-        }}
-      >
+      <div className="flex items-center justify-center w-full relative z-[1055] h-full">
         <div
           className="bg-white shadow-md border border-black rounded-md w-full min-h-[150px] max-w-lg"
           onClick={(e) => {

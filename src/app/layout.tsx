@@ -17,9 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="max-w-xl lg:max-w-4xl xl:max-w-7xl mx-auto px-3 mb-4">
-          {children}
-        </main>
+        <div className="min-h-screen">{children}</div>
         <div id="houzz-modal"></div>
       </body>
     </html>

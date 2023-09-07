@@ -23,11 +23,13 @@ export default function Home() {
   const isMyBeersEmpty = tab == "MY_BEERS" && myBeers == null;
 
   return (
-    <main className="min-h-screen ">
-      <div className="">
-        <div className="my-4 flex justify-between">
+    <div>
+      <nav className=" z-30 fixed top-0 w-full shadow border-b-neutral-400">
+        <div className="max-w-xl relative lg:max-w-4xl xl:max-w-7xl mx-auto px-3 py-4 z-30 flex justify-between items-center h-[60px] bg-white w-full">
           <div className="flex gap-5">
-            <p
+            <div
+              role="tab"
+              aria-labelledby="All beers"
               onClick={() => setTab("ALL_BEERS")}
               className={`pr-2 text-neutral-500 cursor-pointer ${
                 tab === "ALL_BEERS"
@@ -35,9 +37,11 @@ export default function Home() {
                   : ""
               }`}
             >
-              All Beers
-            </p>
-            <p
+              <h3>All Beers</h3>
+            </div>
+            <div
+              role="tab"
+              aria-labelledby="My Beers"
               onClick={() => setTab("MY_BEERS")}
               className={`px-2 text-neutral-500 cursor-pointer ${
                 tab === "MY_BEERS"
@@ -45,13 +49,15 @@ export default function Home() {
                   : ""
               }`}
             >
-              My Beers
-            </p>
+              <h3>My Beers</h3>
+            </div>
           </div>
           {tab === "MY_BEERS" && (
             <Button onClick={() => setOpenmodal(true)}>Add a new beer</Button>
           )}
         </div>
+      </nav>
+      <main className="max-w-xl lg:max-w-4xl xl:max-w-7xl mx-auto px-3 mb-4 mt-[70px]">
         {tab === "ALL_BEERS" && (
           <RemoteBeerTab
             data={data}
@@ -78,7 +84,7 @@ export default function Home() {
             }}
           />
         )}
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
