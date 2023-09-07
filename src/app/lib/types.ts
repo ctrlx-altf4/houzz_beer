@@ -4,5 +4,5 @@ export interface IBeerData {
   image_url: string;
   description: string;
   tagline: string;
-  ingredients?: string;
+  ingredients?: Record<string, { name: string }[]>;
 }

@@ -18,12 +18,17 @@ function RemoteBeerTab({
   loadMore,
   refetch,
 }: IRemoteBeerTabProps) {
+  console.log("data", data);
   return (
     <>
       <div className="grid  grid-cols-1 lg:grid-cols-2   gap-4 ">
         {data?.map((d) => {
           const title = d.ingredients
-            ? `ingredients : ${Object.keys(d.ingredients).join(",")}`
+            ? `ingredients : ${Object.values(d.ingredients)
+                .flat()
+                .map((_d) => _d.name)
+                .join(", ")
+                ?.slice(0, -2)}`
             : "";
           return (
             <DisplayCard
