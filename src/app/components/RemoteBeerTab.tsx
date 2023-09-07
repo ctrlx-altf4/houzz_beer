@@ -18,7 +18,6 @@ function RemoteBeerTab({
   loadMore,
   refetch,
 }: IRemoteBeerTabProps) {
-  console.log("data", data);
   return (
     <>
       <div className="grid  grid-cols-1 lg:grid-cols-2   gap-4 ">
